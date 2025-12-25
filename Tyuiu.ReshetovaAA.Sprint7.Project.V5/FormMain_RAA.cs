@@ -27,15 +27,33 @@ namespace Tyuiu.ReshetovaAA.Sprint7.Project.V5
             labelSubtitle_RAA.Text = "Автор: Решетова Арина";
         }
 
-        // обновление таблицы, статистки и графика
+        // ОБНОВЛЕНИЕ ТАБЛИЦЫ, СТАТИСТИКИ, ГРАФИКА 
 
         private void RefreshGrid(List<Product> list)
         {
             if (list == null)
                 list = dataService_RAA.Products;
 
+            // привязка данных
             dataGridViewProducts_RAA.DataSource = null;
+            dataGridViewProducts_RAA.AutoGenerateColumns = true;
             dataGridViewProducts_RAA.DataSource = list;
+
+            // заголовки колонок
+            if (dataGridViewProducts_RAA.Columns["Code"] != null)
+                dataGridViewProducts_RAA.Columns["Code"].HeaderText = "Код";
+
+            if (dataGridViewProducts_RAA.Columns["Name"] != null)
+                dataGridViewProducts_RAA.Columns["Name"].HeaderText = "Название";
+
+            if (dataGridViewProducts_RAA.Columns["Quantity"] != null)
+                dataGridViewProducts_RAA.Columns["Quantity"].HeaderText = "Количество";
+
+            if (dataGridViewProducts_RAA.Columns["Price"] != null)
+                dataGridViewProducts_RAA.Columns["Price"].HeaderText = "Цена";
+
+            if (dataGridViewProducts_RAA.Columns["Note"] != null)
+                dataGridViewProducts_RAA.Columns["Note"].HeaderText = "Примечание";
         }
 
         private void UpdateStatistics()
@@ -88,7 +106,7 @@ namespace Tyuiu.ReshetovaAA.Sprint7.Project.V5
             }
         }
 
-        // меню
+        // меню и тулбар
 
         private void менюВыход_RAAToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -181,7 +199,7 @@ namespace Tyuiu.ReshetovaAA.Sprint7.Project.V5
             f.ShowDialog();
         }
 
-        // фильтр с ценами
+        // фильтр по цене в товарах
 
         private void buttonApplyFilter_RAA_Click(object sender, EventArgs e)
         {
