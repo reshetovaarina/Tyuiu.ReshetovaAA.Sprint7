@@ -40,7 +40,7 @@ namespace Tyuiu.ReshetovaAA.Sprint7.Project.V5
                 "Программа «Оптовая база»" + "\r\n\r\n" +
                 "Автор: Решетова Арина Алексеевна\r\n" +
                 "Группа: СМАРТб-25-1\r\n\r\n" +
-                "ТИУ";
+                "ТИУ, ВШЦТ";
 
             buttonOk_RAA.Text = "OK";
             buttonOk_RAA.Location = new Point(335, 148);
